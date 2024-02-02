@@ -25,5 +25,7 @@ urlpatterns = [
 
     #new path way
     path('accounts/',include('allauth.urls')),
+    path('products/',include('products.urls')),
+    
     
 ]
