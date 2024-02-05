@@ -1,10 +1,14 @@
 from django.views import generic
 from django.shortcuts import get_object_or_404
+from django.contrib import messages
+from django.http import HttpResponse
+from django.shortcuts import render
 
 from .forms import CommentForm
 from .models import Product,Comment
 
 # Create your views here.
+
 
 class ProductListView(generic.ListView):
     # model = Product
