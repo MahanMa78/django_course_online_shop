@@ -3,10 +3,11 @@ from django.shortcuts import get_object_or_404
 from django.contrib import messages
 from django.http import HttpResponse
 from django.shortcuts import render
+from django.utils.translation import gettext as _
 
 from .forms import CommentForm
 from .models import Product,Comment
-
+# from cart.forms import AddToCartProductForm --->elat comment shodan dar vie=deo 236
 # Create your views here.
 
 
@@ -24,6 +25,7 @@ class ProductDetailView(generic.DetailView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context['comment_form']=CommentForm
+        # context['add_to_cart_form'] = AddToCartProductForm()
         return context
     
 
@@ -42,6 +44,8 @@ class CommentCreateView(generic.CreateView):
         product_id = int(self.kwargs['product_id'])
         product = get_object_or_404(Product,id=product_id)
         obj.product = product
+
+        messages.success(self.request,_("Comment successfully created"))
 
         return super().form_valid(form)
     

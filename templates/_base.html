@@ -1,4 +1,5 @@
 {% load static %}
+{% load i18n %}
 
 <!DOCTYPE html>
 <html lang="en">
@@ -88,7 +89,7 @@
                         <li class="header-toolbar__item mini-cart-item">
                             <a href="#miniCart" class="header-toolbar__btn toolbar-btn mini-cart-btn">
                                 <i class="flaticon flaticon-shopping-cart"></i>
-                                <sup class="mini-cart-count">2</sup>
+                                <sup class="mini-cart-count">{{cart|length}}</sup>
                             </a>
                         </li>
                         <li class="header-toolbar__item user-info">
@@ -96,18 +97,22 @@
                                 <i class="flaticon flaticon-user"></i>
                             </a>
                             <ul class="user-info-menu">
+                                {% if user.is_authenticated %}
                                 <li>
-                                    <a class="text-right" href="my-account.html">حساب کاربری</a>
+                                    <a class="text-right" href="{% url "account_logout" %}">{% translate "Logout" %}</a>
                                 </li>
                                 <li>
-                                    <a class="text-right" href="cart.html">سبد خرید</a>
+                                    <a class="text-right" href="order-tracking.html">{% translate "Profile" %}</a>
+                                </li>
+                                {% else %}
+                                <li>
+                                    <a class="text-right" href="{% url "account_login" %}">{% translate "Login" %}</a>
                                 </li>
                                 <li>
-                                    <a class="text-right" href="wishlist.html">علاقه مندی ها</a>
+                                    <a class="text-right" href="{% url "account_signup" %}">{% translate "SignUp" %}</a>
                                 </li>
-                                <li>
-                                    <a class="text-right" href="order-tracking.html">تاریخچه سفارشات</a>
-                                </li>
+                                
+                                {% endif %}
                             </ul>
                         </li>
                         <li class="header-toolbar__item">
@@ -148,6 +153,7 @@
     
     {% endblock  %}
 
+    {% include "cart/cart_sidebar.html"  %}
 <!-- ************************* JS Files ************************* -->
 
     <!-- jQuery JS -->
