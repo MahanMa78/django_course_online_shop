@@ -45,8 +45,10 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django.contrib.humanize',
 
     #third party apps
+    'jalali_date',
     'rosetta',
     'crispy_forms', 
     "crispy_bootstrap5",
@@ -58,6 +60,7 @@ INSTALLED_APPS = [
     'pages',##ya 'pages.apps.PagesCofig',
     'products',##ya 'products.apps.ProductsConfig',
     'cart.apps.CartConfig',
+    'persian_translate',
 ]
 
 SITE_ID = 1
@@ -212,3 +215,4 @@ CRISPY_TEMPLATE_PACK="bootstrap5"
 MESSAGE_TAGS = {
     messages.ERROR:'danger',
 }
+
