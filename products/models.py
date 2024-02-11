@@ -9,10 +9,11 @@ from ckeditor.fields import RichTextField
 
 # Create your models here.
 class Product(models.Model):
-    title = models.CharField(max_length=100)
-    description = RichTextField()
-    price = models.PositiveIntegerField(default=0)
-    active = models.BooleanField(default=True)
+    title = models.CharField(max_length=100,verbose_name=_('Title'))
+    description = RichTextField(verbose_name=_('Description'))
+    short_description = models.TextField(blank=True,verbose_name=_('Intro'))
+    price = models.PositiveIntegerField(default=0,verbose_name=_("Cost"))
+    active = models.BooleanField(default=True,verbose_name=_("Show"))
     image = models.ImageField(verbose_name=_('Product Image'),upload_to="product/product_cover/",blank=True)
 
     datetime_created = models.DateTimeField(default=timezone.now,verbose_name=_('Date Time Of Creation'))
