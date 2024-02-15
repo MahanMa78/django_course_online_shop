@@ -62,6 +62,7 @@ INSTALLED_APPS = [
     'products',##ya 'products.apps.ProductsConfig',
     'cart.apps.CartConfig',
     'persian_translate',
+    'orders',
 ]
 
 SITE_ID = 1

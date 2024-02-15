@@ -9,8 +9,8 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-02-08 12:18+0330\n"
-"PO-Revision-Date: 2024-02-08 12:19+0330\n"
-"Last-Translator:   <>\n"
+"PO-Revision-Date: 2024-02-14 21:17+0330\n"
+"Last-Translator: باران بارانی <>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
 "MIME-Version: 1.0\n"
@@ -76,10 +76,9 @@ msgid "submit"
 msgstr "ارسال"
 
 #: .\templates\products\product_detail.html:173
-#, fuzzy
 #| msgid "Write your comment"
 msgid "To write your comment please "
-msgstr "نظر خود را بنویسید"
+msgstr "لطفا نظر خود را بنویسید"
 
 #: .\templates\products\product_detail.html:174
 msgid "Login"
