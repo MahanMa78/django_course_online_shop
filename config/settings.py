@@ -63,6 +63,7 @@ INSTALLED_APPS = [
     'cart.apps.CartConfig',
     'persian_translate',
     'orders',
+    'payment',
 ]
 
 SITE_ID = 1
@@ -219,3 +220,4 @@ MESSAGE_TAGS = {
     messages.ERROR:'danger',
 }
 
+ZARINPAL_MERCHENT_ID= env('DJANGO_ZARINPAL_MERCHANT_ID')
