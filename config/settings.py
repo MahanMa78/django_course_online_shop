@@ -28,6 +28,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = env("DJANGO_SECRET_KEY")
+# SECRET_KEY = "django-insecure-b764$$#(&o4o((cvy!z^nsseq5@erq#e^0%5r5a(%c24*f^*sde"
 
 # SECURITY WARNING: don't run with debug turned on in production!
 # DEBUG = False
@@ -46,7 +47,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django.contrib.humanize',
-
+    
     #third party apps
     'jalali_date',
     'rosetta',
@@ -58,7 +59,7 @@ INSTALLED_APPS = [
 
     #local apps 
     'accounts',##ya 'accounts.apps.AccountsConfig',
-    'pages',##ya 'pages.apps.PagesCofig',
+    'pages',##ya 'pages.apps.PagesConfig',
     'products',##ya 'products.apps.ProductsConfig',
     'cart.apps.CartConfig',
     'persian_translate',
